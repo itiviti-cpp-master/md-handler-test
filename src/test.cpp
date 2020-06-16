@@ -225,7 +225,7 @@ TEST_F(MdHandlerTest, out_of_order_no_resend)
 TEST_F(MdHandlerTest, out_of_order_with_gap)
 {
     expect_resend_request(1, 3);
-    expect_resend_request(3, 8);
+    expect_resend_request(4, 7);
 
     expect_messages(1, 13); // range 1-13
 
