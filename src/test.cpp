@@ -227,10 +227,10 @@ TEST_F(MdHandlerTest, out_of_order_with_gap)
     expect_resend_request(1, 3);
     expect_resend_request(4, 7);
 
-    expect_messages(1, 13); // range 1-13
+    expect_messages(1, 12); // range 1-12
 
-    send_packets(Channel::A, {{3, 0}, {1, 1}, {2, 2}, {3, 0}, {10, 0}, {11, 3}});
-    send_packets(Channel::B, {{3, 0}, {3, 0}, {3, 0}, {3, 0}, {10, 0}, {13, 0}});
+    send_packets(Channel::A, {{3, 0}, {1, 1}, {2, 2}, {3, 0}, {10, 0}, {11, 2}});
+    send_packets(Channel::B, {{3, 0}, {3, 0}, {3, 0}, {3, 0}, {10, 0}, {12, 0}});
 }
 
 TEST_F(MdHandlerTest, gap_closed_by_itself)
